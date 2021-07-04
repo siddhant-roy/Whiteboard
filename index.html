@@ -21,12 +21,11 @@
               id="bgcolor"
               onchange="changeBackground(this.options[this.selectedIndex].value)"
             >
-              <option name="#F8F8Ff" value="#F8F8FF">white</option>
-              <option name="#202020" value="#202020">Black</option>
-              <option name="#244D15" value="#244D15">Green</option>
+              <option value="#F8F8FF">White</option>
+              <option value="#202020">Black</option>
+              <option value="#244D15">Green</option>
             </select>
           </span>
-          <button class="eraser"></button>
           <select
             name="thickness"
             id="select_thickness"
@@ -39,36 +38,55 @@
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-          <button id="clear_all_btn" class="btn" value="Clear"></button>
-          <button id="write_btn" class="btn" value="Write"></button>
+		  <button class="btn"><img class="eraser-btn"  src="/assets/eraser.png" alt="eraser"/></button>
+          <button id="write_btn" class="btn" value="Write"><img src="/assets/penIcon.png" alt="pen"/></button>
+		  <button id="clear_all_btn" class="btn" value="Clear"><img src="/assets/broom.png" alt="clear"/></button>
+		  <button id="downloadAnchor" class="btn" value="Download"><img id="download-btn" src="/assets/download.png" download="board.png" alt="down"/></button>
           <div class="colour_dots">
             <span
               id="yellow"
               class="round"
               onclick="changeColor('#FFF222')"
+			  style="background-color: #FFF222;"
             ></span>
             <span
               id="blue"
               class="round"
               onclick="changeColor('#0ABDE3')"
+			  style="background-color: #0ABDE3; backdrop-filter: blur( 6.5px ); box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );"
             ></span>
             <span
               id="white"
               class="round"
-              onclick="changeColor('#FFFFFF')"
+              onclick="changeColor('#e7e7e7')"
+			  style="background-color: #e7e7e7;"
+            ></span>
+			<span
+              id="green"
+              class="round"
+              onclick="changeColor('rgb(22, 240, 22)')"
+			  style="background-color: rgb(22, 240, 22);"
+            ></span>
+			<span
+              id="red"
+              class="round"
+              onclick="changeColor('rgb(209, 51, 12)')"
+			  style="background-color: rgb(209, 51, 12);"
             ></span>
             <span
               id="black"
               class="round"
               onclick="changeColor('#000000')"
+			  style="background-color: #000;"
             ></span>
+			
           </div>
         </div>
       </div>
       <canvas id="canvas"></canvas>
     </div>
 	<a id="downloadAnchor" download="board.png">
-		<h5 class="h5" id="download-btn"><i class="fas fa-download"></i> Download Board</h5>
+		<h5 class="h5" id="download-btn"><em class="fas fa-download"></em> Download Board</h5>
 	  </a>
     <script src="/canvas.js"></script>
   </body>

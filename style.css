@@ -5,16 +5,23 @@
   cursor: url("/assets/pen.png") 3 43, auto;
   overflow: hidden;
 }
+img,
+section {
+  cursor: pointer;
+}
 #page {
   position: relative;
   width: auto;
 }
 .row {
   width: 9vh;
-  height: 81vh;
+  height: 97vh;
   cursor: pointer;
   z-index: 0.2;
-  margin: auto;
+  left: 0%;
+  margin-left: 1vh;
+  margin-top: 1vh;
+  margin-right: 1vh;
   align-items: center;
 }
 .option {
@@ -23,54 +30,72 @@
   align-items: center;
   position: absolute;
   cursor: pointer;
-  right: 1em;
-  margin: 8px;
-  background-color: blanchedalmond;
-  cursor: pointer;
+  margin: 6px;
+  left: -0.5vh;
+  top: -0.5vh;
+  bottom: -0.5vh;
+  background-color: rgb(32, 32, 31);
 }
-
-#write_btn {
-  background-color: brown;
-}
-
 #select_thickness {
   height: 40px;
   width: 40px;
   align-self: center;
   cursor: pointer;
 }
-.eraser {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: black;
-  margin-top: 30px;
+.btn {
+  height: 48px;
+  width: 48px;
+  border-radius: 40%;
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
+  padding: 3%;
+  align-items: center;
+  margin: 1vh;
+}
+.btn:hover {
+  border: 2vh rgb(167, 157, 157);
+  size: 150%;
+  height: 53px;
+  width: 53px;
+  padding: 10%;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  margin: 0.5vh;
 }
 .round {
   display: flex;
   height: 50px;
   width: 50px;
-  border-radius: 50%;
-  background-color: rgb(231, 10, 10);
-  margin-top: 30px;
+  border-radius: 40%;
   cursor: pointer;
+  margin-bottom: 1vh;
 }
 .colour_dots {
-  z-index: 1;
-  height: 62vh;
+  height: 80vh;
   width: 8vh;
   flex-direction: column;
   cursor: pointer;
   align-items: center;
+  margin: 1vh;
 }
-.btn {
-  height: 60px;
-  width: 60px;
+.round:hover {
+  display: flex;
+  height: 54px;
+  width: 54px;
   border-radius: 50%;
-  background-color: chartreuse;
   cursor: pointer;
+  margin: 0.1vh;
+  margin-bottom: 1vh;
 }
 #bgcolor {
+  cursor: pointer;
+  padding: 0%;
+}
+
+.eraser-btn {
+  align-items: center;
   cursor: pointer;
 }
