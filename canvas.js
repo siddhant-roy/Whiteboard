@@ -8,17 +8,17 @@ const clearAllBtn = document.getElementById("clear_all_btn");
 const eraseBtn = document.querySelector(".eraser");
 
 function changeThickness(thickness) {
-	initialThickness = thickness;
+  initialThickness = thickness;
 }
 
 function changeColor(color) {
-	initialColor = color;
+  initialColor = color;
 }
 
 function changeBackground(colour) {
-	//functionchange background colour
-	initialBackground = colour;
-	canvas.style.backgroundColor = initialBackground;
+  //functionchange background colour
+  initialBackground = colour;
+  canvas.style.backgroundColor = initialBackground;
 }
 ///side nav script
 // function openNav() {
@@ -32,66 +32,66 @@ function changeBackground(colour) {
 // }
 
 window.addEventListener("load", () => {
-	const canvas = document.getElementById("canvas");
-	const ctx = canvas.getContext("2d");
-	//resize canvas to window height
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  //resize canvas to window height
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-	function startErasing() {
-		erase = true;
-	}
-	function finishErasing() {
-		erase = false;
-		// inf_ctx.updateChunks();
-	}
-	function eraseBoard(e) {
-		if (!erase) return;
-		ctx.clearRect(e.clientX, e.clientY, 30, 30);
-	}
+  function startErasing() {
+    erase = true;
+  }
+  function finishErasing() {
+    erase = false;
+    // inf_ctx.updateChunks();
+  }
+  function eraseBoard(e) {
+    if (!erase) return;
+    ctx.clearRect(e.clientX, e.clientY, 30, 30);
+  }
 
-	function startPosition(e) {
-		paint = true;
-		draw(e);
-	}
-	function endPosition() {
-		paint = false;
-		ctx.beginPath();
-	}
-	function draw(e) {
-		if (!paint) return;
-		ctx.strokeStyle = initialColor;
-		ctx.lineWidth = initialThickness;
-		ctx.lineCap = "round";
+  function startPosition(e) {
+    paint = true;
+    draw(e);
+  }
+  function endPosition() {
+    paint = false;
+    ctx.beginPath();
+  }
+  function draw(e) {
+    if (!paint) return;
+    ctx.strokeStyle = initialColor;
+    ctx.lineWidth = initialThickness;
+    ctx.lineCap = "round";
 
-		ctx.lineTo(e.clientX, e.clientY);
-		ctx.stroke();
-		ctx.beginPath();
-		ctx.moveTo(e.clientX, e.clientY);
-	}
+    ctx.lineTo(e.clientX, e.clientY);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX, e.clientY);
+  }
 
-	canvas.addEventListener("mousedown", startPosition);
-	canvas.addEventListener("mouseup", endPosition);
-	canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mousedown", startPosition);
+  canvas.addEventListener("mouseup", endPosition);
+  canvas.addEventListener("mousemove", draw);
 
-	eraseBtn.addEventListener("click", () => {
-		allowDraw = false; //declare kha hai ye
-		allowErase = true;
-		canvas.removeEventListener("mousedown", startPosition);
-		canvas.removeEventListener("mouseup", endPosition);
-		canvas.removeEventListener("mousemove", draw);
+  eraseBtn.addEventListener("click", () => {
+    allowDraw = false; //declare kha hai ye
+    allowErase = true;
+    canvas.removeEventListener("mousedown", startPosition);
+    canvas.removeEventListener("mouseup", endPosition);
+    canvas.removeEventListener("mousemove", draw);
 
-		canvas.addEventListener("mousedown", startErasing);
-		canvas.addEventListener("mouseup", finishErasing);
-		canvas.addEventListener("mousemove", eraseBoard);
-	});
-	clearAllBtn.addEventListener("click", () => {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		canvas.removeEventListener("mousedown", startErasing);
-		canvas.removeEventListener("mouseup", finishErasing);
-		canvas.removeEventListener("mousemove", eraseBoard);
-		canvas.addEventListener("mousedown", startPosition);
-		canvas.addEventListener("mouseup", endPosition);
-		canvas.addEventListener("mousemove", draw);
-	});
+    canvas.addEventListener("mousedown", startErasing);
+    canvas.addEventListener("mouseup", finishErasing);
+    canvas.addEventListener("mousemove", eraseBoard);
+  });
+  clearAllBtn.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.removeEventListener("mousedown", startErasing);
+    canvas.removeEventListener("mouseup", finishErasing);
+    canvas.removeEventListener("mousemove", eraseBoard);
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
+  });
 });
