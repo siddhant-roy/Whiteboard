@@ -14,17 +14,25 @@
 		<!-- side nav calling bar -->
 
 			
-					<div id="page">
-						<div class="option">
-							<div class="row">
-						<span class="bgcolour">
-							<select name="bg" id="bgcolor" onchange="changeBackground(this.options[this.selectedIndex].value)">
-								<option name="#202020" value="#202020"></option>
-								<option  name="#F8F8Ff" value="#F8F8FF"></option>
-								<option  name="#244D15" value="#244D15"></option>
-							</select>
-			
-						</span>
+				
+		<!-- /// side nav part -->
+
+		<!-- side nav calling bar -->
+		<div id="page">
+			<div class="option">
+				<div class="row">
+					<!-- <span id="page"> -->
+					<span class="bgcolour">
+						<select
+							name="bg"
+							id="bgcolor"
+							onchange="changeBackground(this.options[this.selectedIndex].value)"
+						>
+							<option name="#F8F8Ff" value="#F8F8FF">white</option>
+							<option name="#202020" value="#202020">Black</option>
+							<option name="#244D15" value="#244D15">Green</option>
+						</select>
+					</span>
 					<button class="eraser"></button>
 					<select
 						name="thickness"
@@ -38,34 +46,39 @@
 						<option value="9">9</option>
 						<option value="10">10</option>
 					</select>
+					<button id="clear_all_btn" class="btn" value="Clear"></button>
 					<div class="colour_dots">
 						<span
-						id="yellow"
-						class="round"
-						onclick="changeColor('#FFF222')"
-					></span>
-					<span id="blue" class="round" onclick="changeColor('#0ABDE3')"></span>
-					<span
-						id="white"
-						class="round"
-						onclick="changeColor('#FFFFFF')"
-					></span>
-					<span
-						id="black"
-						class="round"
-						onclick="changeColor('#000000')"
-					></span>
+							id="yellow"
+							class="round"
+							onclick="changeColor('#FFF222')"
+						></span>
+						<span
+							id="blue"
+							class="round"
+							onclick="changeColor('#0ABDE3')"
+						></span>
+						<span
+							id="white"
+							class="round"
+							onclick="changeColor('#FFFFFF')"
+						></span>
+						<span
+							id="black"
+							class="round"
+							onclick="changeColor('#000000')"
+						></span>
 					</div>
-					<button id="clear_all_btn" class="btn" value="Clear"></button>
 				</div>
-			</div>
-	</div>
-			<!-- <canvas id="canvas"></canvas> -->
-
 		
-		<canvas id="canvas"></canvas>
+			</div>
+			<canvas id="canvas"></canvas>
+	</div>
+	
 
 			
+
+
 
 		<script src="/canvas.js"></script>
 	</body>

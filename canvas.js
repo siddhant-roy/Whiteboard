@@ -1,28 +1,37 @@
 let erase = false;
 let paint = false;
 let initialThickness = 5;
+let initialColor='#000000';
+
 let initialBackground='#F8F8FF';//variable for background
 const clearAllBtn = document.getElementById("clear_all_btn");
 const eraseBtn = document.querySelector('.eraser');
 
-function changeThickness(thickness){
-    initialThickness=thickness;
+
+
+function changeThickness(thickness) {
+	initialThickness = thickness;
 }
 
-function changeBackground(colour){//functionchange background colour 
-initialBackground=colour;
-canvas.style.backgroundColor=initialBackground;
+function changeColor(color) {
+	initialColor = color;
+}
+
+function changeBackground(colour) {
+	//functionchange background colour
+	initialBackground = colour;
+	canvas.style.backgroundColor = initialBackground;
 }
 ///side nav script
-function openNav() {
-	document.getElementById("mySidenav").style.width = "250px";
-	document.getElementById("main").style.marginLeft = "250px";
-}
+// function openNav() {
+// 	document.getElementById("mySidenav").style.width = "250px";
+// 	document.getElementById("main").style.marginLeft = "250px";
+// }
 
-function closeNav() {
-	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginLeft = "0";
-}
+// function closeNav() {
+// 	document.getElementById("mySidenav").style.width = "0";
+// 	document.getElementById("main").style.marginLeft = "0";
+// }
 
 window.addEventListener("load", () => {
 	const canvas = document.getElementById("canvas");
@@ -53,6 +62,7 @@ window.addEventListener("load", () => {
 	}
 	function draw(e) {
 		if (!paint) return;
+		ctx.strokeStyle = initialColor;
 		ctx.lineWidth = initialThickness;
 		ctx.lineCap = "round";
 
@@ -77,5 +87,16 @@ window.addEventListener("load", () => {
         canvas.addEventListener("mouseup", finishErasing);
         canvas.addEventListener("mousemove", eraseBoard);
     });
+    clearAllBtn.addEventListener('click', ()=> {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.addEventListener("mousedown", startPosition);
+	canvas.addEventListener("mouseup", endPosition);
+	canvas.addEventListener("mousemove", draw);
+    }
+        );
+        
+      
+
+
 
 });
