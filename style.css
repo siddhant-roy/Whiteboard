@@ -19,11 +19,13 @@
     right: 2em;
     margin: 8px;
     background-color: blanchedalmond;
+    flex-direction: row;
 }
 #select_thickness{
     height: 40px;
     width: 40px;
     align-self: center;
+    
 }
 .eraser{
     height: 30px;
@@ -33,11 +35,13 @@
     margin-top: 30px;
 }
 .round{
-    height: 5px;
-    width: 5px;
+    display: flex;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     background-color: rgb(231, 10, 10);
     margin-top: 30px;
+    
     
 }
 .colour_dots{
