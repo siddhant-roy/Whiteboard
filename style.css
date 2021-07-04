@@ -1,52 +1,48 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url("/assets/pen.png") 6 20, auto;
 }
-#page{
-    position: relative;
+#page {
+  position: relative;
 }
-.row{
-    width: 250px;
-    height: 90px;
+.row {
+  width: 250px;
+  height: 90px;
 }
-.option{
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    position: absolute;
-    cursor: pointer;
-    right: 2em;
-    margin: 8px;
-    background-color: blanchedalmond;
+.option {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  right: 2em;
+  margin: 8px;
+  background-color: blanchedalmond;
 }
-#select_thickness{
-    height: 40px;
-    width: 40px;
-    align-self: center;
+#select_thickness {
+  height: 40px;
+  width: 40px;
+  align-self: center;
 }
-.eraser{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: black;
-    margin-top: 30px;
+.eraser {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: black;
+  margin-top: 30px;
 }
-.round{
-    top: 50;
-    bottom: 50;
-    align-self: center;
-    z-index: 1;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: rgb(231, 10, 10);
-    margin-top: 30px;
-    
+.round {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: rgb(231, 10, 10);
+  margin-top: 30px;
 }
-.colour_dots{
-z-index: 0.5;
-height: 400px;
-width: 400px;
-flex-direction: row;
+.colour_dots {
+  z-index: 1;
+  height: 10px;
+  width: 10px;
+  flex-direction: row;
 }
