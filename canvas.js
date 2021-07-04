@@ -89,11 +89,14 @@ window.addEventListener("load", () => {
     });
     clearAllBtn.addEventListener('click', ()=> {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.removeEventListener("mousedown",startErasing);
+        canvas.removeEventListener("mouseup", finishErasing);
+        canvas.removeEventListener("mousemove", eraseBoard);
         canvas.addEventListener("mousedown", startPosition);
-	canvas.addEventListener("mouseup", endPosition);
-	canvas.addEventListener("mousemove", draw);
-    }
-        );
+	     canvas.addEventListener("mouseup", endPosition);
+	    canvas.addEventListener("mousemove", draw);
+    
+    });
         
       
 
