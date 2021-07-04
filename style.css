@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#page{
+    position: relative;
+}
+.option{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    right: 2em;
+    margin: 8px;
+    background-color: blanchedalmond;
+}
+#select_thickness{
+    height: 40px;
+    width: 40px;
+    align-self: center;
+}
+.eraser{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: black;
+    margin-top: 30px;
+
+}
