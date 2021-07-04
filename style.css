@@ -2,14 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: url("/assets/pen.png") 6 20, auto;
+  cursor: url("/assets/pen.png") 3 43, auto;
+  overflow: hidden;
 }
 #page {
   position: relative;
+  width: auto;
 }
 .row {
-  width: 250px;
-  height: 90px;
+  width: 31vh;
+  height: 15vh;
   cursor: pointer;
 }
 .option {
@@ -18,7 +20,7 @@
   align-items: center;
   position: absolute;
   cursor: pointer;
-  right: 2em;
+  right: 1em;
   margin: 8px;
   background-color: blanchedalmond;
   cursor: pointer;
@@ -39,7 +41,7 @@
 }
 .round {
   display: flex;
- height: 50px;
+  height: 50px;
   width: 50px;
   border-radius: 50%;
   background-color: rgb(231, 10, 10);
@@ -53,14 +55,13 @@
   flex-direction: row;
   cursor: pointer;
 }
-.btn{
-    height: 30px;
+.btn {
+  height: 30px;
   width: 30px;
   border-radius: 50%;
   background-color: chartreuse;
   cursor: pointer;
-
 }
-#bgcolor{
-cursor: pointer;
+#bgcolor {
+  cursor: pointer;
 }

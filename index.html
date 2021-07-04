@@ -1,85 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Virtual Board</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeus Virtual Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- /// side nav part -->
 
-		<!-- /// side nav part -->
+    <!-- side nav calling bar -->
 
-		<!-- side nav calling bar -->
+    <!-- /// side nav part -->
 
-			
-				
-		<!-- /// side nav part -->
+    <!-- side nav calling bar -->
+    <div id="page">
+      <div class="option">
+        <div class="row">
+          <span class="bgcolour">
+            <select
+              name="bg"
+              id="bgcolor"
+              onchange="changeBackground(this.options[this.selectedIndex].value)"
+            >
+              <option name="#F8F8Ff" value="#F8F8FF">white</option>
+              <option name="#202020" value="#202020">Black</option>
+              <option name="#244D15" value="#244D15">Green</option>
+            </select>
+          </span>
+          <button class="eraser"></button>
+          <select
+            name="thickness"
+            id="select_thickness"
+            onchange="changeThickness(this.options[this.selectedIndex].value)"
+          >
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <button id="clear_all_btn" class="btn" value="Clear"></button>
+          <div class="colour_dots">
+            <span
+              id="yellow"
+              class="round"
+              onclick="changeColor('#FFF222')"
+            ></span>
+            <span
+              id="blue"
+              class="round"
+              onclick="changeColor('#0ABDE3')"
+            ></span>
+            <span
+              id="white"
+              class="round"
+              onclick="changeColor('#FFFFFF')"
+            ></span>
+            <span
+              id="black"
+              class="round"
+              onclick="changeColor('#000000')"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
 
-		<!-- side nav calling bar -->
-		<div id="page">
-			<div class="option">
-				<div class="row">
-					<!-- <span id="page"> -->
-					<span class="bgcolour">
-						<select
-							name="bg"
-							id="bgcolor"
-							onchange="changeBackground(this.options[this.selectedIndex].value)"
-						>
-							<option name="#F8F8Ff" value="#F8F8FF">white</option>
-							<option name="#202020" value="#202020">Black</option>
-							<option name="#244D15" value="#244D15">Green</option>
-						</select>
-					</span>
-					<button class="eraser"></button>
-					<select
-						name="thickness"
-						id="select_thickness"
-						onchange="changeThickness(this.options[this.selectedIndex].value)"
-					>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-					</select>
-					<button id="clear_all_btn" class="btn" value="Clear"></button>
-					<div class="colour_dots">
-						<span
-							id="yellow"
-							class="round"
-							onclick="changeColor('#FFF222')"
-						></span>
-						<span
-							id="blue"
-							class="round"
-							onclick="changeColor('#0ABDE3')"
-						></span>
-						<span
-							id="white"
-							class="round"
-							onclick="changeColor('#FFFFFF')"
-						></span>
-						<span
-							id="black"
-							class="round"
-							onclick="changeColor('#000000')"
-						></span>
-					</div>
-				</div>
-		
-			</div>
-			<canvas id="canvas"></canvas>
-	</div>
-	
-
-			
-
-
-
-		<script src="/canvas.js"></script>
-	</body>
+    <script src="/canvas.js"></script>
+  </body>
 </html>
