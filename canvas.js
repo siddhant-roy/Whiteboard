@@ -1,8 +1,14 @@
 let paint = false;
 let initialThickness = 5;
+let initialBackground='#F8F8FF';//variable for background
 
-function changeThickness(thickness) {
-	initialThickness = thickness;
+function changeThickness(thickness){
+    initialThickness=thickness;
+}
+
+function changeBackground(colour){//functionchange background colour 
+initialBackground=colour;
+canvas.style.backgroundColor=initialBackground;
 }
 ///side nav script
 function openNav() {
@@ -33,7 +39,7 @@ window.addEventListener("load", () => {
 	function draw(e) {
 		if (!paint) return;
 		ctx.lineWidth = initialThickness;
-		ctx.lineCap = "round";
+		ctx.linecap = "round";
 
 		ctx.lineTo(e.clientX, e.clientY);
 		ctx.stroke();

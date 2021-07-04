@@ -12,7 +12,17 @@
 
 		<!-- side nav calling bar -->
 		<div id="page">
-			<!-- <div id="main">  -->
+			<div class="bgcolour">
+				<select
+					name="bg"
+					id="bgcolor"
+					onchange="changeBackground(this.options[this.selectedIndex].value)"
+				>
+					<option name="#202020" value="#202020"></option>
+					<option name="#F8F8Ff" value="#F8F8FF"></option>
+					<option name="#244D15" value="#244D15"></option>
+				</select>
+			</div>
 			<div class="option">
 				<div class="row">
 					<button class="eraser"></button>
