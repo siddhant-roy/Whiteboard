@@ -4,6 +4,16 @@ let initialThickness = 5;
 function changeThickness(thickness) {
 	initialThickness = thickness;
 }
+///side nav script
+function openNav() {
+	document.getElementById("mySidenav").style.width = "250px";
+	document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+	document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("main").style.marginLeft = "0";
+}
 
 window.addEventListener("load", () => {
 	const canvas = document.getElementById("canvas");
