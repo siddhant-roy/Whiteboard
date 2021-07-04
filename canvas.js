@@ -1,9 +1,14 @@
 let paint = false;
 let initialThickness = 5;
 let initialBackground = "#F8F8FF"; //variable for background
+let initialColor = "#000000"; //pen colour
 
 function changeThickness(thickness) {
 	initialThickness = thickness;
+}
+
+function changeColor(color) {
+	initialColor = color;
 }
 
 function changeBackground(colour) {
@@ -12,15 +17,15 @@ function changeBackground(colour) {
 	canvas.style.backgroundColor = initialBackground;
 }
 ///side nav script
-function openNav() {
-	document.getElementById("mySidenav").style.width = "250px";
-	document.getElementById("main").style.marginLeft = "250px";
-}
+// function openNav() {
+// 	document.getElementById("mySidenav").style.width = "250px";
+// 	document.getElementById("main").style.marginLeft = "250px";
+// }
 
-function closeNav() {
-	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginLeft = "0";
-}
+// function closeNav() {
+// 	document.getElementById("mySidenav").style.width = "0";
+// 	document.getElementById("main").style.marginLeft = "0";
+// }
 
 window.addEventListener("load", () => {
 	const canvas = document.getElementById("canvas");
@@ -39,8 +44,9 @@ window.addEventListener("load", () => {
 	}
 	function draw(e) {
 		if (!paint) return;
+		ctx.strokeStyle = initialColor;
 		ctx.lineWidth = initialThickness;
-		ctx.linecap = "round";
+		ctx.lineCap = "round";
 
 		ctx.lineTo(e.clientX, e.clientY);
 		ctx.stroke();
