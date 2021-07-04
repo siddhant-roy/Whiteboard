@@ -8,17 +8,18 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div id="page">
-			<div class="bgcolour">
-				<select name="bg" id="bgcolor" onchange="changeBackground(this.options[this.selectedIndex].value)">
-					<option name="#202020" value="#202020"></option>
-					<option  name="#F8F8Ff" value="#F8F8FF"></option>
-					<option  name="#244D15" value="#244D15"></option>
-				</select>
-
-			</div>
+		
 			<div class="option">
 				<div class="row">
+					<sapn id="page">
+						<span class="bgcolour">
+							<select name="bg" id="bgcolor" onchange="changeBackground(this.options[this.selectedIndex].value)">
+								<option name="#202020" value="#202020"></option>
+								<option  name="#F8F8Ff" value="#F8F8FF"></option>
+								<option  name="#244D15" value="#244D15"></option>
+							</select>
+			
+						</span>
 					<button class="eraser"></button>
 					<select
 						name="thickness"
@@ -32,7 +33,8 @@
 						<option value="9">9</option>
 						<option value="10">10</option>
 					</select>
-					<span
+					<div class="colour_dots">
+						<span
 						id="yellow"
 						class="round"
 						onclick="changeColor('#FFF222')"
@@ -48,11 +50,12 @@
 						class="round"
 						onclick="changeColor('#000000')"
 					></span>
+					</div>
 					<button id="clear_all_btn" class="btn" value="Clear"></button>
 				</div>
 			</div>
 			<!-- <canvas id="canvas"></canvas> -->
-		</div>
+		</sapn>
 		<canvas id="canvas"></canvas>
 		<script src="/canvas.js"></script>
 	</body>

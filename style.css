@@ -6,6 +6,10 @@
 #page{
     position: relative;
 }
+.row{
+    width: 250px;
+    height: 90px;
+}
 .option{
     display: flex;
     justify-content:flex-end;
@@ -27,4 +31,18 @@
     border-radius: 50%;
     background-color: black;
     margin-top: 30px;
+}
+.round{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: rgb(231, 10, 10);
+    margin-top: 30px;
+    
+}
+.colour_dots{
+z-index: 1;
+height: 10px;
+width: 10px;
+flex-direction: row;
 }
