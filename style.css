@@ -25,6 +25,11 @@
   background-color: blanchedalmond;
   cursor: pointer;
 }
+
+#write_btn {
+  background-color: brown;
+}
+
 #select_thickness {
   height: 40px;
   width: 40px;

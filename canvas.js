@@ -6,6 +6,7 @@ let initialColor = "#000000";
 let initialBackground = "#F8F8FF"; //variable for background
 const clearAllBtn = document.getElementById("clear_all_btn");
 const eraseBtn = document.querySelector(".eraser");
+const writeBtn = document.getElementById("write_btn");
 
 function changeThickness(thickness) {
   initialThickness = thickness;
@@ -74,9 +75,16 @@ window.addEventListener("load", () => {
   canvas.addEventListener("mouseup", endPosition);
   canvas.addEventListener("mousemove", draw);
 
+  writeBtn.addEventListener("click", () => {
+    canvas.removeEventListener("mousedown", startErasing);
+    canvas.removeEventListener("mouseup", finishErasing);
+    canvas.removeEventListener("mousemove", eraseBoard);
+
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
+  });
   eraseBtn.addEventListener("click", () => {
-    allowDraw = false; //declare kha hai ye
-    allowErase = true;
     canvas.removeEventListener("mousedown", startPosition);
     canvas.removeEventListener("mouseup", endPosition);
     canvas.removeEventListener("mousemove", draw);
