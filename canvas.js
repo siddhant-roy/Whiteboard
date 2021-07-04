@@ -1,5 +1,9 @@
 let paint = false;
-let initialWidth = 5;
+let initialThickness = 5;
+
+function changeThickness(thickness){
+    initialThickness=thickness;
+}
 
 window.addEventListener("load", () => {
 	const canvas = document.getElementById("canvas");
@@ -18,7 +22,7 @@ window.addEventListener("load", () => {
 	}
 	function draw(e) {
 		if (!paint) return;
-		ctx.lineWidth = initialWidth;
+		ctx.lineWidth = initialThickness;
 		ctx.linecap = "round";
 
 		ctx.lineTo(e.clientX, e.clientY);
