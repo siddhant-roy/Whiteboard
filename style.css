@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   cursor: url("/assets/pen.png") 3 43, auto;
-  overflow: hidden;
+  
 }
 #page {
   position: relative;
