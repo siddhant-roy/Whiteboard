@@ -83,6 +83,7 @@ window.addEventListener("load", () => {
 		canvas.addEventListener("mousedown", startPosition);
 		canvas.addEventListener("mouseup", endPosition);
 		canvas.addEventListener("mousemove", draw);
+		canvas.style.cursor = "url('./assets/pen.png'), auto";
 	});
 	eraseBtn.addEventListener("click", () => {
 		canvas.removeEventListener("mousedown", startPosition);
@@ -91,6 +92,7 @@ window.addEventListener("load", () => {
 		canvas.addEventListener("mousedown", startErasing);
 		canvas.addEventListener("mouseup", finishErasing);
 		canvas.addEventListener("mousemove", eraseBoard);
+		canvas.style.cursor = "url('./assets/eraser.png'), auto";
 	});
 	clearAllBtn.addEventListener("click", () => {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
