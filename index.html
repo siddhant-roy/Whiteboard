@@ -15,6 +15,7 @@
     <!-- side nav calling bar -->
       <div class="option">
         <div class="row">
+			<small>BG Colour</small>
           <span class="bgcolour">
             <select
               name="bg"
@@ -26,24 +27,27 @@
               <option value="#244D15">Green</option>
             </select>
           </span>
+		  <small>Pen thickness</small>
           <select
             name="thickness"
             id="select_thickness"
             onchange="changeThickness(this.options[this.selectedIndex].value)"
           >
             <option value="5">5</option>
-            <option value="6">6</option>
             <option value="7">7</option>
-            <option value="8">8</option>
             <option value="9">9</option>
-            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="13">13</option>
+            <option value="15">15</option>
           </select>
 		  <button class="btn" id="erase"><img class="eraser-btn"  src="/assets/icons8-pencil-eraser-36.png" alt="eraser"/></button>
       <button id="write_btn" class="btn" value="Write"><img src="/assets/penIcon.png" alt="pen"/></button>
 		  <button id="clearBtn" class="btn" value="Clear"><img src="/assets/broom.png" alt="clear"/></button>
-		  <button id="downloadAnchor" class="btn" value="Download"><img id="download-btn" src="/assets/download.png" download="board.png" alt="down"/></button>
+		  <a id="downloadAnchor" download="board.png">
+			<button id="download-btn" class="btn"><img id="downloadAnchor" src="/assets/download.png"alt="down"/></button>
+		  </a>
           <div class="colour_dots">
-            <span
+            <!-- <span
               id="yellow"
               class="round"
               onclick="changeColor('#FFF222')"
@@ -54,7 +58,7 @@
               class="round"
               onclick="changeColor('#0ABDE3')"
 			  style="background-color: #0ABDE3; backdrop-filter: blur( 6.5px ); box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );"
-            ></span>
+            ></span> -->
             <span
               id="white"
               class="round"
@@ -79,6 +83,10 @@
               onclick="changeColor('#000000')"
 			  style="background-color: #000;"
             ></span>
+            <span  class="round"
+			style="background: linear-gradient(to right, #a80077, #66ff00);" >
+          <input type="color" id="color-picker" class="round" onclick="changeColor(this.value)" style="background: linear-gradient(to right, #a80077, #66ff00);" >
+            </span>
 			
           </div>
         </div>
@@ -91,3 +99,14 @@
     <script src="/canvas.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+  <!-- <a></a>
+
+
+  <h5 class="h5" id="download-btn"><i class="fas fa-download"></i> Download Board</h5> -->
