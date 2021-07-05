@@ -8,13 +8,17 @@ const clearAllBtn = document.getElementById("clearBtn");
 const eraseBtn = document.querySelector(".eraser-btn");
 const writeBtn = document.getElementById("write_btn");
 const downloadBtn = document.getElementById("download-btn");
+const colourPicker = document.getElementById("color-picker");
+const c = colourPicker.value;
 
 function changeThickness(thickness) {
 	initialThickness = thickness;
 }
 
 function changeColor(color) {
-	initialColor = color;
+	if (typeof color == "undefined") {
+		initialColor = c;
+	} else initialColor = color;
 }
 
 function changeBackground(colour) {
