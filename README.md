@@ -1,1 +1,2 @@
-# This is a hackathon project
+# This is a hackathon project made by Team Zeus .
+
